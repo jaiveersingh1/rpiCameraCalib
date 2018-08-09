@@ -72,10 +72,10 @@ def save_snaps(width=0, height=0, name="snapshot", folder=".", raspi=False):
 
 def main():
     # ---- DEFAULT VALUES ---
-    SAVE_FOLDER = "."
+    SAVE_FOLDER = "wideChess"
     FILE_NAME = "snapshot"
-    FRAME_WIDTH = 0
-    FRAME_HEIGHT = 0
+    FRAME_WIDTH = 640
+    FRAME_HEIGHT = 480
 
     # ----------- PARSE THE INPUTS -----------------
     parser = argparse.ArgumentParser(

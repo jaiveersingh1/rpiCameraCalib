@@ -122,7 +122,7 @@ if (nPatternFound > 1):
     img = cv2.imread(imgNotGood)
     h,  w = img.shape[:2]
     print "Image to undistort: ", imgNotGood
-    newcameramtx, roi=cv2.getOptimalNewCameraMatrix(mtx,dist,(w,h),0,(w,h))
+    newcameramtx, roi=cv2.getOptimalNewCameraMatrix(mtx,dist,(w,h),1,(w,h))
 
     # undistort
     mapx,mapy = cv2.initUndistortRectifyMap(mtx,dist,None,newcameramtx,(w,h),5)
@@ -130,7 +130,7 @@ if (nPatternFound > 1):
 
     # crop the image
     x,y,w,h = roi
-    #dst = dst[y:y+h, x:x+w]
+    dst = dst[320:, 480:]
     print "ROI: ", x, y, w, h
 
     cv2.imwrite(workingFolder + "/calibresult.png",dst)
